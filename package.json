@@ -1,0 +1,26 @@
+{
+  "name": "chatbot",
+  "version": "1.0.0",
+  "description": "Chatbot de Fractal Abogados",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonatan Morales Torres (JonyD)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "download": "^6.2.5",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.6",
+    "nodemailer": "^4.0.1",
+    "sync-request": "^4.1.0",
+    "watson-developer-cloud": "^2.37.0",
+    "wav": "^1.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "thread-sleep": "^2.0.0"
+  }
+}

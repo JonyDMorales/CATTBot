@@ -1,0 +1,11 @@
+Marca
+El usuario: %nombre% dejo los siguientes datos:
+***************************************
+Marca: %marca%
+Tipo de servicio: %tipo%
+Giro del negocio: %giro%
+Página web: %web%
+Número de personas: %porcentaje%
+***************************************
+Quiso iniciar el proceso: %contactar%
+Contacto: %correo%

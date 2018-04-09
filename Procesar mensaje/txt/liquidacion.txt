@@ -1,0 +1,28 @@
+Legal liquidación
+
+El usuario %nombre% dejo los siguientes datos:
+***************************************
+Tipo de contratación: %contratacion%
+Historia del usuario: %historia%
+***************************************
+Fecha de ingreso: %fecha_ingreso%
+Fecha de baja: %fecha_baja%
+Salario: %salario%
+***************************************
+Liquidación: %liquidacion%
+Salario diario: %salario_diario%
+Salario diario integrado: %salario_integrado%
+***************************************
+Indemnización: %indemnizacion%
+***************************************
+Prima de antigüedad: %prima_antiguedad%
+***************************************
+Finiquito: %finiquito%
+Aguinaldo: %aguinaldo%
+Vacaciones: %vacaciones%
+Prima vacacional: %prima_vacacional%
+***************************************
+La empresa te paga lo que te corresponde: %pago%
+Cuanto le paga la empresa: %pago_empresa%
+Quiso contactar con algún abogado: %contactar%
+Contacto: %correo%

@@ -1,0 +1,5 @@
+---
+applications:
+ - name: FractalA
+   random-route: true
+   memory: 256M

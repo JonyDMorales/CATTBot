@@ -1,0 +1,16 @@
+Legal finiquito
+El usuario: %nombre% dejo los siguientes datos:
+***************************************
+Fecha de ingreso: %fecha_ingreso%
+Fecha de baja: %fecha_baja%
+Salario: %salario%
+***************************************
+Finiquito: %finiquito%
+Salario diario: %salario_diario%
+Aguinaldo: %aguinaldo%
+Vacaciones: %vacaciones%
+Prima vacacional: %prima_vacacional%
+***************************************
+La empresa te paga lo que te corresponde: %pago%
+Quiso contactar con algún abogado: %contactar%
+Contacto: %correo%
