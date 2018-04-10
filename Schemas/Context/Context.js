@@ -2,26 +2,16 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var Context;
 var assert = require('assert');
-var fs = require('fs');
-var ca = [ fs.readFileSync(__dirname + "/servercert.crt") ];
-var url = 'mongodb://admin:DEXATOYMUMBLOBQL@sl-us-south-1-portal.12.dblayer.com:30248,sl-us-south-1-portal.13.dblayer.com:30248/Context?authSource=admin&ssl=true';
-//var url = 'mongodb://JonyD:1234@ds131621.mlab.com:31621/context';
-var options = {
-    mongos: {
-      ssl: true,
-      sslValidate: true,
-      sslCA: ca
-    }
-}
+var url = 'mongodb://JonyD:JDmorales#0131@trabajo-terminal-shard-00-00-jjpal.mongodb.net:27017,trabajo-terminal-shard-00-01-jjpal.mongodb.net:27017,trabajo-terminal-shard-00-02-jjpal.mongodb.net:27017/test?ssl=true&replicaSet=trabajo-terminal-shard-0&authSource=admin';
 
-mongoose.connect(url, options, (error)=>{
-	if(error) {
-        console.log("Error context: " + error);    
-    }else{
+mongoose.connect(url, (error) => {
+    if (error) {
+        console.log("Error context: " + error);
+    } else {
         console.log("Conexion context exitosa")
     }
 });
 
 var schema = new Schema({}, { strict: false });
-var Context = mongoose.model("Context",schema);
+var Context = mongoose.model("Context", schema);
 module.exports.Context = Context;
