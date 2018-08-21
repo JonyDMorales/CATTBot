@@ -1,6 +1,5 @@
 var Conversation = require('./Conversation.js');
 var request = require('sync-request');
-var SendMessage = require('../Procesar mensaje/SendMessage.js');
 
 function processImage(senderID, url){
 	console.log(url);
@@ -9,7 +8,7 @@ function processImage(senderID, url){
         headers: {'content-type' : 'application/x-www-form-urlencoded'},
 	    body: 'image = ' + url
     });*/
-    SendMessage.processMessage(senderID, 'Gracias, ahora el audio del nombre de tu marca. :D');
+    //SendMessage.processMessage(senderID, 'Gracias, ahora el audio del nombre de tu marca. :D');
 	//Conversation.callWatsonAPI(senderID, 'Continuar');
 }
 

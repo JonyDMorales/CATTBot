@@ -1,9 +1,8 @@
 var Watson = require('./Conversation.js');
-var SpeechToText = require('./SpeechToText.js');
-var AnalyzeImage = require('./AnalyzeImage.js');
 var request = require('sync-request');
 var DatosUsuario = require("../Schemas/Facebook/Datos de Facebook.js").DatosF;
-var token = 'EAADPN6Uo7GUBAL1q3GFnNXV4XXPOMosqH90qjfYe3VnHLs5kR4q3nj3caLTk6vZALq5Wp1KZAz4tPaNltfAKwpxqVv1FUp4YPdcVQ7xFAIqzyDoNBS8HZBQuYDB5NYuidzhrDZBvVlnUjVjM1C2PVfYcGe2OWuYKZCaHt81CpOgZDZD';
+
+var token = 'EAADPN6Uo7GUBAA8maMXZAfpz1vpZAErNjhDtXuoNxRCSCNJANodvLSOYBR4yZA046educFKqIFwkdOvXZB1eX0I4XWGKOkZAliM9OKDtwtm8vZBtRpBqi6TBZBqqsqzMOO9ZCSIHZBNmhrZCZCP8ium4pXktmggdLm0PIsXLUqKU7ZCqxgZDZD';
 
 function veryfyToken(req, res) {
     if (req.query['hub.mode'] === 'subscribe' &&
@@ -53,17 +52,7 @@ function receivedMessage(event) {
     var DataUser = null;
 
     if (messageText) {
-        DataUser = callGetDataUser(senderID);
-        if (DataUser) {
-            var Json = JSON.parse(DataUser);
-            DatosUsuario.findOneAndUpdate({ senderId: senderID }, Json, { upsert: true }, function(err, doc) {
-                if (err) throw err;
-                console.log('Se inserto correctamente el Json de faceboook. ');
-            });
-            Watson.callWatsonAPI(senderID, messageText);
-        } else {
-            Watson.callWatsonAPI(senderID, messageText);
-        }
+        Watson.callWatsonAPI(senderID, messageText);
     } else if (message.attachments) {
         /*
         var json = JSON.stringify(message.attachments);
@@ -88,10 +77,7 @@ function receivedPostback(event) {
         DataUser = callGetDataUser(senderID);
         if (DataUser) {
             var Json = JSON.parse(DataUser);
-            DatosUsuario.findOneAndUpdate({ senderId: senderID }, Json, { upsert: true }, function(err, doc) {
-                if (err) throw err;
-                console.log('Se inserto correctamente el Json de faceboook');
-            });
+            DatosUsuario.findOneAndUpdate({ senderId: senderID }, Json, { upsert: true }, (err, doc) => { if (err) throw err; });
             Watson.sendUserName(senderID, Json.first_name, message);
         } else {
             Watson.callWatsonAPI(senderID, message);
@@ -99,24 +85,6 @@ function receivedPostback(event) {
     } else {
         console.log("Error postback");
     }
-}
-
-function sendGenericMessage(recipientId, template) {
-    var messageData = {
-        recipient: {
-            id: recipientId
-        },
-        message: {
-            attachment: {
-                type: "template",
-                payload: {
-                    template_type: "generic",
-                    elements: template
-                }
-            }
-        }
-    };
-    callSendAPI(messageData);
 }
 
 function sendMessageTextAndButtons(recipientId, text, buttons) {
@@ -221,7 +189,6 @@ function receivedData(req, res) {
 module.exports = {
     veryfyToken,
     sendTextMessage,
-    sendGenericMessage,
     sendMessageTextAndButtons,
     sendMessageTextAndMenu,
     sendMessageImageAndButtons,
