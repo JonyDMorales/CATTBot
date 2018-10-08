@@ -2,7 +2,7 @@ var Watson = require('./Conversation.js');
 var request = require('sync-request');
 var DatosUsuario = require("../Schemas/Facebook/Datos de Facebook.js").DatosF;
 
-var token = 'EAADPN6Uo7GUBAA8maMXZAfpz1vpZAErNjhDtXuoNxRCSCNJANodvLSOYBR4yZA046educFKqIFwkdOvXZB1eX0I4XWGKOkZAliM9OKDtwtm8vZBtRpBqi6TBZBqqsqzMOO9ZCSIHZBNmhrZCZCP8ium4pXktmggdLm0PIsXLUqKU7ZCqxgZDZD';
+var token = 'EAADPN6Uo7GUBADP1AJwSB2S0DKa8f5zdXXovZC48P995yiDsopHsrlnSBHVm93LlVYmcVzgLY1vpsiHN5Ok5pHNrNgL8wNumLmA6atGPi7weX1605ZCmFITHYnBDRkd5mT5wkF9x2GqaG9L0ZAmmyb3eitfpGsEbMtf5BYiwwZDZD';
 
 function veryfyToken(req, res) {
     if (req.query['hub.mode'] === 'subscribe' &&

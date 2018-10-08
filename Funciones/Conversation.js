@@ -2,10 +2,10 @@ var ContextDB = require("../Schemas/Context/Context.js").Context;
 var Watson = require('watson-developer-cloud/conversation/v1');
 var SendMessage = require('../Procesar mensaje/SendMessage.js');
 
-var workspace_id = 'e3d7a02f-b1f8-4114-ba40-0a643126ff59';
+var workspace_id = 'c417375b-831e-417f-9164-91d11826fd7a';
 var conversation = new Watson({
-    username: 'b2be6ab3-8074-4cf7-9c16-b4761598e30c',
-    password: 'UCEXSOCt2Xgp',
+    username: 'b3ef4c79-939b-406f-bca4-2c8d25e44deb',
+    password: 'sxTNklb5jzFo',
     path: { workspace_id: workspace_id },
     version_date: '2017-08-09'
 });
@@ -29,6 +29,7 @@ function sendUserName(senderID, userName, messagePostback) {
                 console.error('Error en conversation: ' + err);
             }
             response.context.nombre = that.messageText;
+            delete response["__v"];
             ContextDB.findOneAndUpdate({ senderId: senderID }, response.context, { upsert: true }, function(err, doc) {
                 if (err) throw err;
                 return;
@@ -64,9 +65,13 @@ function callWatsonAPI(senderID, messageUserText) {
                 console.log(err);
                 return;
             }
+
             if (response.output.text.length != 0) {
                 for (var i = 0; i < response.output.text.length; i++) {
                     var messageAnswerWatson = response.output.text[i];
+                    //console.log(that.messageText);
+                    //console.log(messageAnswerWatson);
+
                     /*if (response.context.formula) {
                         response = processContextFormula(response);
                         SendMessage.processMessage(senderID, messageAnswerWatson);
@@ -75,6 +80,7 @@ function callWatsonAPI(senderID, messageUserText) {
                     //}
                     var newContext = response.context;
                     delete newContext["formula"];
+                    delete newContext["__v"];
                     ContextDB.findOneAndUpdate({ senderId: senderID }, newContext, { upsert: true }, function(err, doc) {
                         if (err) throw err;
                         return;
