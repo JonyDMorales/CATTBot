@@ -2,7 +2,7 @@ var Watson = require('./Conversation.js');
 var request = require('sync-request');
 var DatosUsuario = require("../Schemas/Facebook/Datos de Facebook.js").DatosF;
 
-var token = 'EAADPN6Uo7GUBADP1AJwSB2S0DKa8f5zdXXovZC48P995yiDsopHsrlnSBHVm93LlVYmcVzgLY1vpsiHN5Ok5pHNrNgL8wNumLmA6atGPi7weX1605ZCmFITHYnBDRkd5mT5wkF9x2GqaG9L0ZAmmyb3eitfpGsEbMtf5BYiwwZDZD';
+var token = 'EAAeYOSRZC1XEBAEZCMI0S5ZADIeZB6cKfJlwCB75Mbd5LzAOmE59rWt7aVPSzlPs25bUdTp2oSdllXwGXvPRvrbVawYTD7TG0ZAeFZACyVayZALRY85mco0kwmRV1nDtoGNnuGqGYD2gkZAIaochktPU0DSZCZBqt0slUgnY9gbsa8HAZDZD';
 
 function veryfyToken(req, res) {
     if (req.query['hub.mode'] === 'subscribe' &&
@@ -95,6 +95,25 @@ function sendMessageTextAndButtons(recipientId, text, buttons) {
         message: {
             "text": text,
             "quick_replies": buttons
+        }
+    };
+    callSendAPI(messageData);
+}
+
+function sendMessageTextAndTemplate(recipientId, text, buttons) {
+    var messageData = {
+        recipient: {
+            id: recipientId
+        },
+        message: {
+            "attachment":{
+                "type":"template",
+                "payload":{
+                  "template_type":"button",
+                  "text":text,
+                  "buttons": buttons
+                }
+            }
         }
     };
     callSendAPI(messageData);
@@ -194,5 +213,6 @@ module.exports = {
     sendMessageImageAndButtons,
     sendImage,
     sendVideo,
+    sendMessageTextAndTemplate,
     receivedData
 };
