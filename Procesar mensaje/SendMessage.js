@@ -15,9 +15,25 @@ function processMessage(senderID, message) {
     } else if (message.includes('CONTENIDOTT1')) {
         message = message.replace('CONTENIDOTT1', '');
         Facebook.sendMessageTextAndTemplate(senderID, message, Buttons.docTTContenido);
+    } else if (message.includes('SELECT')) {
+        message = message.replace('SELECT', '');
+        Facebook.sendMessageTextAndTemplate(senderID, message, Buttons.select);
     } else if (message.includes('CONTENIDOTT2')) {
         message = message.replace('CONTENIDOTT2', '');
         Facebook.sendMessageTextAndTemplate(senderID, message, Buttons.docTT2Contenido);
+    } else if (message.includes('ENCUESTA')) {
+        message = message.replace('ENCUESTA', '');
+        Facebook.sendMessageTextAndTemplate(senderID, message, Buttons.encuesta);
+    } else if (message.includes('MEME')) {
+        message = message.replace('MEME', '');
+        Facebook.sendTextMessage(senderID, message);
+        Facebook.sendImage(senderID, 'blob:https://web.whatsapp.com/a1c6d2b2-a3bc-440c-95a7-429542ad42b5');
+    } else if (message.includes('CATALOGO')) {
+        message = message.replace('CATALOGO', '');
+        Facebook.sendMessageTextAndTemplate(senderID, message, Buttons.catalogo);
+    } else if (message.includes('ELECTIVA')) {
+        message = message.replace('ELECTIVA', '');
+        Facebook.sendMessageTextAndTemplate(senderID, message, Buttons.electiva);
     } else if (message.includes('CAMBIOFECHA')) {
         message = message.replace('CAMBIOFECHA', '');
         Facebook.sendMessageTextAndTemplate(senderID, message, Buttons.docTTCambioFecha);
@@ -37,7 +53,6 @@ function processMessage(senderID, message) {
         message = message.replace('OPCIONES', '');
         Facebook.sendMessageTextAndButtons(senderID, message, Buttons.opciones);
     } else {
-        console.log('mensaje sencillo');
         Facebook.sendTextMessage(senderID, message);
     }
 }

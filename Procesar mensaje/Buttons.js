@@ -1,76 +1,63 @@
-var docsProtocolo = [
-    {
-      "type":"web_url",
-      "url":"http://www.isc.escom.ipn.mx/docs/catt/formProtocolo.doc",
-      "title":"Formato de Protocolo"
+var docsProtocolo = [{
+        "type": "web_url",
+        "url": "http://www.isc.escom.ipn.mx/docs/catt/formProtocolo.doc",
+        "title": "Formato de Protocolo"
     },
     {
-      "type":"web_url",
-      "url":"http://www.isc.escom.ipn.mx/docs/catt/evalFormProtocolo.doc",
-      "title":"Evaluación de Protocolo"
+        "type": "web_url",
+        "url": "http://www.isc.escom.ipn.mx/docs/catt/evalFormProtocolo.doc",
+        "title": "Evaluación de Protocolo"
     }
 ];
 
-var docsTT1 = [
-    {
-      "type":"web_url",
-      "url":"http://www.isc.escom.ipn.mx/docs/catt/solicitudCambioTT.pdf",
-      "title":"Solicitud de modificación"
+var docsTT1 = [{
+        "type": "web_url",
+        "url": "http://www.isc.escom.ipn.mx/docs/catt/solicitudCambioTT.pdf",
+        "title": "Solicitud de modificación"
     },
     {
-        "type":"web_url",
-        "url":"http://www.isc.escom.ipn.mx/docs/catt/formatoCambioFechaPresTT.docx",
-        "title":"Cambio de fecha"
+        "type": "web_url",
+        "url": "http://www.isc.escom.ipn.mx/docs/catt/formatoCambioFechaPresTT.docx",
+        "title": "Cambio de fecha"
     },
     {
-        "type":"web_url",
-        "url":"http://www.isc.escom.ipn.mx/docs/catt/acuseSinodales2017.doc",
-        "title":"Acuse"
+        "type": "web_url",
+        "url": "http://www.isc.escom.ipn.mx/docs/catt/acuseSinodales2017.doc",
+        "title": "Acuse"
     }
 ];
 
-var docTTCambioFecha = [
-    {
-      "type":"web_url",
-      "url":"http://www.isc.escom.ipn.mx/docs/catt/formatoCambioFechaPresTT.docx",
-      "title":"Cambio de fecha"
-    }
-];
+var docTTCambioFecha = [{
+    "type": "web_url",
+    "url": "http://www.isc.escom.ipn.mx/docs/catt/formatoCambioFechaPresTT.docx",
+    "title": "Cambio de fecha"
+}];
 
-var docTTAcuse = [
-    {
-      "type":"web_url",
-      "url":"http://www.isc.escom.ipn.mx/docs/catt/acuseSinodales2017.doc",
-      "title":"Acuse"
-    }
-];
+var docTTAcuse = [{
+    "type": "web_url",
+    "url": "http://www.isc.escom.ipn.mx/docs/catt/acuseSinodales2017.doc",
+    "title": "Acuse"
+}];
 
-var docTTContenido = [
-    {
-      "type":"web_url",
-      "url":"http://www.isc.escom.ipn.mx/docs/catt/requisitos_TTI_20191.pdf",
-      "title":"Contenido"
-    }
-];
+var docTTContenido = [{
+    "type": "web_url",
+    "url": "http://www.isc.escom.ipn.mx/docs/catt/requisitos_TTI_20191.pdf",
+    "title": "Contenido"
+}];
 
-var docTT2Contenido = [
-    {
-      "type":"web_url",
-      "url":"http://www.isc.escom.ipn.mx/docs/catt/requisitos_TTIIR_20191.pdf",
-      "title":"Contenido"
-    }
-];
+var docTT2Contenido = [{
+    "type": "web_url",
+    "url": "http://www.isc.escom.ipn.mx/docs/catt/requisitos_TTIIR_20191.pdf",
+    "title": "Contenido"
+}];
 
-var docFechas = [
-    {
-      "type":"web_url",
-      "url":"http://www.isc.escom.ipn.mx/docs/catt/calEvaluaciones2019_1.pdf",
-      "title":"Fechas"
-    }
-];
+var docFechas = [{
+    "type": "web_url",
+    "url": "http://www.isc.escom.ipn.mx/docs/catt/calEvaluaciones2019_1.pdf",
+    "title": "Fechas"
+}];
 
-var menuPrincipal = [
-    {
+var menuPrincipal = [{
         "content_type": "text",
         "title": "Protocolo",
         "payload": "PROTOCOLO"
@@ -87,18 +74,12 @@ var menuPrincipal = [
     },
     {
         "content_type": "text",
-        "title": "TTR",
-        "payload": "TTR"
-    }, 
-    {
-        "content_type": "text",
         "title": "Electiva",
         "payload": "MATERIA ELECTIVA"
     }
 ];
 
-var opciones = [
-    {
+var opciones = [{
         "content_type": "text",
         "title": "Requisitos",
         "payload": "REQUISITOS"
@@ -121,31 +102,55 @@ var opciones = [
 ];
 
 var opcionesTT = [{
-    "content_type": "text",
-    "title": "Requisitos",
-    "payload": "REQUISITOS"
-},
-{
-    "content_type": "text",
-    "title": "Inscripción",
-    "payload": "INSCRIPCION"
-},
-{
-    "content_type": "text",
-    "title": "Documentos",
-    "payload": "DOCUMENTOS"
-},
-{
-    "content_type": "text",
-    "title": "Presentación",
-    "payload": "PRESENTACION"
-},
-{
-    "content_type": "text",
-    "title": "Otra",
-    "payload": "Otra"
-}
+        "content_type": "text",
+        "title": "Requisitos",
+        "payload": "REQUISITOS"
+    },
+    {
+        "content_type": "text",
+        "title": "Inscripción",
+        "payload": "INSCRIPCION"
+    },
+    {
+        "content_type": "text",
+        "title": "Documentos",
+        "payload": "DOCUMENTOS"
+    },
+    {
+        "content_type": "text",
+        "title": "Presentación",
+        "payload": "PRESENTACION"
+    },
+    {
+        "content_type": "text",
+        "title": "Otra",
+        "payload": "Otra"
+    }
 ];
+
+var select = [{
+    "type": "web_url",
+    "url": "http://www.uteycv.escom.ipn.mx/select/",
+    "title": "Select"
+}];
+
+var catalogo = [{
+    "type": "web_url",
+    "url": "http://www.uteycv.escom.ipn.mx/select/docs/catalogo_20161.pdf",
+    "title": "Catálogo"
+}];
+
+var electiva = [{
+    "type": "web_url",
+    "url": "http://www.uteycv.escom.ipn.mx/select/docs/procedimientoManual20181.pdf",
+    "title": "Electiva"
+}];
+
+var encuesta = [{
+    "type": "web_url",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSfgI9UEa1ApzevLRQRR_uo1E69y9BJ6HPnw5DrOX53IYtWVGg/viewform",
+    "title": "Encuesta"
+}];
 
 module.exports = {
     menuPrincipal,
@@ -157,5 +162,9 @@ module.exports = {
     docsTT1,
     docTTContenido,
     docTT2Contenido,
-    opciones
+    opciones,
+    select,
+    catalogo,
+    electiva,
+    encuesta
 }

@@ -1,5 +1,5 @@
 ---
 applications:
- - name: FractalA
+ - name: Contenedor CATTbot
    random-route: true
    memory: 256M
