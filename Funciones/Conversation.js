@@ -10,7 +10,7 @@ var conversation = new Watson({
     version_date: '2017-08-09'
 });
 
-function sendUserName(senderID, userName, messagePostback) {
+function sendUserName(senderID, userName) {
     ContextDB.findOne({ senderId: senderID }, function(err, context) {
         if (err) {
             console.log("Error en findOne: " + err);
@@ -34,7 +34,7 @@ function sendUserName(senderID, userName, messagePostback) {
                 if (err) throw err;
                 return;
             });
-            callWatsonAPI(senderID, messagePostback);
+            //callWatsonAPI(senderID, messagePostback);
         });
     }
 }

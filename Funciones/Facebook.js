@@ -75,13 +75,13 @@ function receivedPostback(event) {
 
     if (message) {
         DataUser = callGetDataUser(senderID);
-        if (DataUser) {
-            var Json = JSON.parse(DataUser);
-            DatosUsuario.findOneAndUpdate({ senderId: senderID }, Json, { upsert: true }, (err, doc) => { if (err) throw err; });
-            Watson.sendUserName(senderID, Json.first_name, message);
-        } else {
-            Watson.callWatsonAPI(senderID, message);
-        }
+        //if (DataUser) {
+        var Json = JSON.parse(DataUser);
+        DatosUsuario.findOneAndUpdate({ senderId: senderID }, Json, { upsert: true }, (err, doc) => { if (err) throw err; });
+        Watson.sendUserName(senderID, Json.first_name);
+        //} else {
+        Watson.callWatsonAPI(senderID, message);
+        //}
     } else {
         console.log("Error postback");
     }
@@ -106,12 +106,12 @@ function sendMessageTextAndTemplate(recipientId, text, buttons) {
             id: recipientId
         },
         message: {
-            "attachment":{
-                "type":"template",
-                "payload":{
-                  "template_type":"button",
-                  "text":text,
-                  "buttons": buttons
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "button",
+                    "text": text,
+                    "buttons": buttons
                 }
             }
         }
